@@ -7,14 +7,25 @@ from datetime import datetime
 class BaseModel:
     """ Class: BaseModel """
 
-    def __init__(self):
+    def __init__(self, *args, **kwargs):
         """ Constructor """
         self.id = str(uuid4())
         self.created_at = datetime.now()
         self.updated_at = datetime.now()
 
+        if len(kwargs) > 0:
+            convert = ["created_at", "updated_at"]
+            for key, value in kwargs.items():
+                if key in convert:
+                    setattr(self, key, datetime.strptime(value,
+                            "%Y-%m-%dT%H:%M:%S.%f"))
+                elif key == "__class__":
+                    continue
+                else:
+                    setattr(self, key, value)
+
     def to_dict(self):
-        """ returns a dictionary containing all keys/values of __dict__ of the instance """
+        """ returns a dictionary containing all keys/values of __dict__"""
         el_dict = self.__dict__
         dict_str = {}
         for key, value in el_dict.items():
@@ -31,5 +42,5 @@ class BaseModel:
                                       self.id, self.__dict__))
 
     def save(self):
-        """ updates the public instance attribute updated_at with the current datetime """
+        """ updates the attr updated_at with current datetime """
         self.updated_at = datetime.now()
