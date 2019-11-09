@@ -2,7 +2,7 @@
 """ Base class """
 from uuid import uuid4
 from datetime import datetime
-from models import storage
+import models
 
 
 class BaseModel:
@@ -25,7 +25,7 @@ class BaseModel:
                 else:
                     setattr(self, key, value)
         else:
-            storage.new(self)
+            models.storage.new(self)
 
     def to_dict(self):
         """ returns a dictionary containing all keys/values of __dict__"""
@@ -47,6 +47,6 @@ class BaseModel:
     def save(self):
         """ updates the attr updated_at with current datetime """
         self.updated_at = datetime.now()
-        storage.new(self)
-        storage.save()
+        models.storage.new(self)
+        models.storage.save()
 

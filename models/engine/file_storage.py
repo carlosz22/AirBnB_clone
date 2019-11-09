@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """ FileStorage class """
 import json
-from models import base_model
+import models.base_model
 
 
 class FileStorage:
@@ -32,6 +32,3 @@ class FileStorage:
                 FileStorage.__objects = json.load(file)
         except FileNotFoundError:
             pass
-
-        for value in FileStorage.__objects.values():
-            base_model.BaseModel(**value)
