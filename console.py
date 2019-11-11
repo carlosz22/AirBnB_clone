@@ -46,11 +46,15 @@ class HBNBCommand(cmd.Cmd):
 
     def do_show(self, line):
         """ Prints the STR representation of an instance """
+        list_line = line.split(' ')
         if line == "":
             print("** class name missing **")
-
-
-
+        elif list_line[0] not in HBNBCommand.cls_arr.keys():
+            print("** class doesn't exist **")
+        elif len(list_line) < 2:
+            print("** instance id missing **")
+        elif list_line[0] + '.' + list_line[1] not in models.storage.all().keys():
+            print("** no instance found **")
 
 
 if __name__ == "__main__":
