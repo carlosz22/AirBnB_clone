@@ -1,13 +1,8 @@
 #!/usr/bin/python3
-""" User class """
-from uuid import uuid4
-from datetime import datetime
+""" State class """
 import models
 
 
-class User(models.base_model.BaseModel):
-    """ Class: User """
-    email = ""
-    password = ""
-    first_name = ""
-    last_name = ""
+class State(models.base_model.BaseModel):
+    """ Class: State """
+    name = ""
