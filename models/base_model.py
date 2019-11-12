@@ -54,3 +54,8 @@ class BaseModel:
     def all(cls):
         """ Prints all instances of the class by the console"""
         return "all {}".format(cls.__name__)
+
+    @classmethod
+    def count(cls):
+        """ Returns the number of instances of a class """
+        return "count {}".format(cls.__name__)
