@@ -49,3 +49,8 @@ class BaseModel:
         self.updated_at = datetime.now()
         models.storage.new(self)
         models.storage.save()
+
+    @classmethod
+    def all(cls):
+        """ Prints all instances of the class by the console"""
+        return "all {}".format(cls.__name__)
