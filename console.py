@@ -20,6 +20,13 @@ class HBNBCommand(cmd.Cmd):
                "City": City, "Place": Place,
                "Review": Review, "State": State, "User": User}
 
+    def default(self, line):
+        """Evaluates something"""
+        try:
+            self.onecmd(eval(line))
+        except:
+            print("*** Unknown syntax: {}".format(line))
+
     def emptyline(self):
         """Empty line: Do nothing"""
         pass
