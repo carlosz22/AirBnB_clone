@@ -59,3 +59,19 @@ class BaseModel:
     def count(cls):
         """ Returns the number of instances of a class """
         return "count {}".format(cls.__name__)
+
+    @classmethod
+    def show(cls, __id=''):
+        """Returns the string representation of an instance"""
+        return "show {} {}".format(cls.__name__, __id)
+
+    @classmethod
+    def destroy(cls, _id=''):
+        """Destroys an instance"""
+        return "destroy {} {}".format(cls.__name__, _id)
+
+    @classmethod
+    def update(cls, _id='', attribute_name='', attribute_value=''):
+        """Updates an instance"""
+        return "update {} {} {}".format(cls.__name__, _id, attribute_name,
+                                        attribute_value)
