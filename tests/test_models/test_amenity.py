@@ -21,5 +21,25 @@ class TestAmenity(unittest.TestCase):
         am.name = "Charlie"
         self.assertIn("name", am.to_dict())
 
+    def test_to_dict(self):
+        """ Tests that the function retrieves a dictionary """
+        base = Amenity()
+        ret_dict = base.to_dict()
+        self.assertTrue(isinstance(ret_dict, dict))
+
+    def test_str(self):
+        """ Tests the str repr. of an object """
+        base = Amenity()
+        base_str = base.__str__()
+        self.assertTrue(isinstance(base_str, str))
+
+    def test_save(self):
+        """ Tests the save method """
+        base = Amenity()
+        time1 = base.updated_at
+        base.save()
+        time2 = base.updated_at
+        self.assertNotEqual(time1, time2)
+
 
 
