@@ -5,7 +5,9 @@ Unittest for FileStorage class
 import unittest
 import pep8
 import os
+import json
 from models.engine.file_storage import FileStorage
+from models.base_model import BaseModel
 
 
 class TestFileStorage(unittest.TestCase):
@@ -14,8 +16,8 @@ class TestFileStorage(unittest.TestCase):
     def tearDown(self):
         """Deleting everything at the end"""
         FileStorage._FileStorage__objects = {}
-        if os.path.exists(FileStorage._FileStorage__path_file):
-            os.remove(FileStorage._FileStorage__path_file)
+        if os.path.exists('file.json'):
+            os.remove('file.json')
 
     def test_pep8_conformance_model_files(self):
         """
@@ -45,8 +47,31 @@ class TestFileStorage(unittest.TestCase):
         storage = FileStorage()
         self.assertTrue(isinstance(storage._FileStorage__file_path, str))
 
+    def test__objects_exists(self):
+        """Tests for the objects existance"""
+        storage = FileStorage()
+        self.assertTrue(isinstance(storage._FileStorage__objects, dict))
+
     def test_all(self):
         """Tests all() function"""
         storage = FileStorage()
         dict_all = storage.all()
         self.assertTrue(isinstance(dict_all, dict))
+
+    def test_new(self):
+        """Tests new() function"""
+        obj = BaseModel()
+        storage = FileStorage()
+        storage.new(obj)
+        self.assertNotEqual(storage.all(), 0)
+
+    def test_save(self):
+        """Tests save() function"""
+        obj = BaseModel()
+        obj.name = "Kotlin"
+        storage = FileStorage()
+        obj.save()
+        with open('file.json', 'r', encoding='utf-8') as f:
+            dict_json = json.load(f)
+        value_dict = dict_json.get("BaseModel.{}".format(obj.id))
+        self.assertEqual(value_dict['name'], "Kotlin")
