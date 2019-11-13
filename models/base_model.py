@@ -19,7 +19,7 @@ class BaseModel:
             for key, value in kwargs.items():
                 if key in convert:
                     setattr(self, key, datetime.strptime(value,
-                            "%Y-%m-%dT%H:%M:%S.%f"))
+                                                         "%Y-%m-%dT%H:%M:%S.%f"))
                 elif key == "__class__":
                     continue
                 else:
@@ -73,5 +73,5 @@ class BaseModel:
     @classmethod
     def update(cls, _id='', attribute_name='', attribute_value=''):
         """Updates an instance"""
-        return "update {} {} {}".format(cls.__name__, _id, attribute_name,
-                                        attribute_value)
+        return "update {} {} {} {}".format(cls.__name__, _id, attribute_name,
+                                           attribute_value)
