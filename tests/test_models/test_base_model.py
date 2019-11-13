@@ -3,7 +3,8 @@
 Unittest for BaseModel class
 """
 import unittest
-import models
+from models import storage
+import os
 from models.base_model import BaseModel
 
 
@@ -42,11 +43,13 @@ class TestBaseModel(unittest.TestCase):
 
     def test_save(self):
         """ Tests the save method """
-        base = BaseModel()
-        base.name = "Plankton"
-        time1 = base.updated_at
-        base.save()
-        time2 = base.updated_at
-        self.assertNotEqual(time1, time2)
-        obj_name = base.to_dict()['name']
-        self.assertEqual(obj_name, "Plankton")
+        obj = BaseModel()
+        obj.name = "Plankton"
+        obj.age = 88.32
+        obj.save()
+        dict_obj = storage.all()
+        obj_ref = storage.all().get("BaseModel.{}".format(obj.id))
+        self.assertEqual(obj.id, obj_ref.id)
+        self.assertEqual(obj.name, obj_ref.name)
+        self.assertEqual(obj.age, obj_ref.age)
+        self.assertTrue(os.path.exists('file.json'))
