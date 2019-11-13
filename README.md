@@ -1,12 +1,12 @@
 # AirBnB_clone 
-![Flowchart](https://holbertonintranet.s3.amazonaws.com/uploads/medias/2018/6/65f4a1dd9c51265f49d0.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUXW7JF5MT%2F20191111%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20191111T225804Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=a225dce99c1826cb1a5fa7d023a7b878764ea90414980f4dc59c320fcf420c68.png)
+![Flowchart](https://ibb.co/bQqBRjS.png)
  Built in python3, this project emulates the functioning of the AirBnB website.
  This version is called The Holberton B&B, and it is a project for [Holberton School Medellín](https://www.holbertonschool.com/co/campus_life/medellin).
  
 ## Flowchart
 We will develop the backend as well as the frontend part of the website. Here is a diagram of the project and a hint of the technologies we used.
  
- ![Flowchart](https://holbertonintranet.s3.amazonaws.com/uploads/medias/2018/6/d2d06462824fab5846f3.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUXW7JF5MT%2F20191111%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20191111T225804Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=e91604034c2a3d814c60c6702892b540b700456042595b75df8595fedd39bd9e.png)
+ ![Flowchart](https://ibb.co/tLYjpHb.png)
  
  ## The Console
  There is a built-in command line interpreter (console) that provides a way to interact with the Storage-engine.
