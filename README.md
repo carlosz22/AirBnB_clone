@@ -1,12 +1,12 @@
 # AirBnB_clone 
-![Flowchart](https://ibb.co/bQqBRjS.png)
+![Flowchart](https://imgur.com/xuoucfD.png)
  Built in python3, this project emulates the functioning of the AirBnB website.
  This version is called The Holberton B&B, and it is a project for [Holberton School Medellín](https://www.holbertonschool.com/co/campus_life/medellin).
  
 ## Flowchart
 We will develop the backend as well as the frontend part of the website. Here is a diagram of the project and a hint of the technologies we used.
  
- ![Flowchart](https://ibb.co/tLYjpHb.png)
+ ![Flowchart](hhttps://imgur.com/3rCP5Fx.png)
  
  ## The Console
  There is a built-in command line interpreter (console) that provides a way to interact with the Storage-engine.
