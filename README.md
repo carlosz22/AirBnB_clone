@@ -6,7 +6,7 @@
 ## Flowchart
 We will develop the backend as well as the frontend part of the website. Here is a diagram of the project and a hint of the technologies we used.
  
- ![Flowchart](hhttps://imgur.com/3rCP5Fx.png)
+ ![Flowchart](https://imgur.com/3rCP5Fx.png)
  
  ## The Console
  There is a built-in command line interpreter (console) that provides a way to interact with the Storage-engine.
