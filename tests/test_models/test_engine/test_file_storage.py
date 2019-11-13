@@ -3,13 +3,19 @@
 Unittest for FileStorage class
 """
 import unittest
-import models
 import pep8
+import os
 from models.engine.file_storage import FileStorage
 
 
 class TestFileStorage(unittest.TestCase):
     """ Test cases for FileStorage Class """
+
+    def tearDown(self):
+        """Deleting everything at the end"""
+        FileStorage._FileStorage__objects = {}
+        if os.path.exists(FileStorage._FileStorage__path_file):
+            os.remove(FileStorage._FileStorage__path_file)
 
     def test_pep8_conformance_model_files(self):
         """
@@ -33,6 +39,11 @@ class TestFileStorage(unittest.TestCase):
         """ Tests instance of a class """
         storage = FileStorage()
         self.assertTrue(isinstance(storage, FileStorage))
+
+    def test__file_path_exists(self):
+        """Tests for the file path existance"""
+        storage = FileStorage()
+        self.assertTrue(isinstance(storage._FileStorage__file_path, str))
 
     def test_all(self):
         """Tests all() function"""
