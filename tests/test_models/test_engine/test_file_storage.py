@@ -75,3 +75,14 @@ class TestFileStorage(unittest.TestCase):
             dict_json = json.load(f)
         value_dict = dict_json.get("BaseModel.{}".format(obj.id))
         self.assertEqual(value_dict['name'], "Kotlin")
+
+    def test_reload(self):
+        """Tests reload() function"""
+        obj = BaseModel()
+        storage = FileStorage()
+        obj.name = "Plakton"
+        obj.age = 88.32
+        obj.save()
+        storage._FIleStorage__objects = {}
+        storage.reload()
+        self.assertNotEqual(storage.all(), {})
