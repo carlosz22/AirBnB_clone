@@ -18,8 +18,8 @@ class BaseModel:
             convert = ["created_at", "updated_at"]
             for key, value in kwargs.items():
                 if key in convert:
-                    setattr(self, key, datetime.strptime(value,
-                                                         "%Y-%m-%dT%H:%M:%S.%f"))
+                    setattr(self, key,
+                            datetime.strptime(value, "%Y-%m-%dT%H:%M:%S.%f"))
                 elif key == "__class__":
                     continue
                 else:
@@ -73,5 +73,16 @@ class BaseModel:
     @classmethod
     def update(cls, _id='', attribute_name='', attribute_value=''):
         """Updates an instance"""
-        return "update {} {} {} {}".format(cls.__name__, _id, attribute_name,
-                                           attribute_value)
+        if type(attribute_name) is dict:
+            if cls.__name__ + "." + _id in models.storage.all().keys():
+                obj = models.storage.all().get('{}.{}'.
+                                               format(cls.__name__, _id))
+                for key, value in attribute_name.items():
+                    setattr(obj, key, value)
+                models.storage.save()
+                return "\n"
+            else:
+                return "update {} {}".format(cls.__name__, _id)
+        else:
+            return "update {} {} {} \"{}\"".\
+                format(cls.__name__, _id, attribute_name, attribute_value)
