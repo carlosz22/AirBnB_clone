@@ -26,3 +26,25 @@ class TestBaseModel(unittest.TestCase):
         base.name = "Dani"
         dicty = base.to_dict()
         self.assertTrue("name" in dicty)
+
+    def test_to_dict(self):
+        """ Tests that the function retrieves a dictionary """
+        base = BaseModel()
+        ret_dict = base.to_dict()
+        self.assertTrue(isinstance(ret_dict, dict))
+
+    def test_str(self):
+        """ Tests the str repr. of an object """
+        base = BaseModel()
+        base_str = base.__str__()
+        self.assertTrue(isinstance(base_str, str))
+
+    def test_save(self):
+        """ Tests the save method """
+        base = BaseModel()
+        time1 = base.updated_at
+        base.save()
+        time2 = base.updated_at
+        self.assertNotEqual(time1, time2)
+
+
