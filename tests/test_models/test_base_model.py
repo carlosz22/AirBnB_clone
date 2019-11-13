@@ -3,6 +3,7 @@
 Unittest for BaseModel class
 """
 import unittest
+import models
 from models.base_model import BaseModel
 
 
@@ -42,7 +43,10 @@ class TestBaseModel(unittest.TestCase):
     def test_save(self):
         """ Tests the save method """
         base = BaseModel()
+        base.name = "Plankton"
         time1 = base.updated_at
         base.save()
         time2 = base.updated_at
         self.assertNotEqual(time1, time2)
+        obj_name = base.to_dict()['name']
+        self.assertEqual(obj_name, "Plankton")
