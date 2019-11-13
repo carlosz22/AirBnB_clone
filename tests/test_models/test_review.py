@@ -1,9 +1,9 @@
-usr/bin/python3
+#!/usr/bin/python3
 """
 Unittest for BaseModel class
 """
 import unittest
-from models.place import Place
+from models.review import Review
 import pep8
 from models.base_model import BaseModel
 
