@@ -48,17 +48,17 @@ This means, the console is ready to get some commands ;).
 ### Available Commands
 | Command | Arguments | Description |
 | ------ | ------ | ------ |
-| create | `<class name>` | Creates a new class from the available class-list ||
-| show | `<class name> <id>` | Prints the string representation of an instance based on the class name and id. |
-| destroy | `<class name> <id>` | Deletes an instance based on the class name and id (save the change into the JSON file). |
-| all | `[ <class name>]` | Prints all string representation of all instances based or not on the class name |
-| update | `<class name> <id> <attribute name> "<attribute value>"`  | Updates an instance based on the class name and id by adding or updating attribute (save the change into the JSON file |
-| .all() | <class name>.all() | Retrieves all instances of a class |
-| .count() | <class name>.count() | Retrieves the number of instances of a class |
-| .show(<id>) | <class name>.show(<id>) | Retrieves an instance based on its ID |
-| .destroy(<id>) | <class name>.destroy(<id>) | Destroys an instance based on his ID |
-| .update(<id>, <attr name>, <attr value>) | <class name>.update(<id>, <attr name>, <attr value>) | Updates an instance based on his ID |
-| .dupdate(<id>, <dict repr>) | <class name>.update(<id>, <dictionary representation>) | Updates an instance based on his ID with a dictionary |
+| `create` | `<class name>` | Creates a new class from the available class-list ||
+| `show` | `<class name> <id>` | Prints the string representation of an instance based on the class name and id. |
+| `destroy` | `<class name> <id>` | Deletes an instance based on the class name and id (save the change into the JSON file). |
+| `all` | `[ <class name>]` | Prints all string representation of all instances based or not on the class name |
+| `update` | `<class name> <id> <attribute name> "<attribute value>"`  | Updates an instance based on the class name and id by adding or updating attribute (save the change into the JSON file |
+| `.all()`| `<class name>.all()` | Retrieves all instances of a class |
+| `.count()` | `<class name>.count()` | Retrieves the number of instances of a class |
+| `.show(<id>)` | `<class name>.show(<id>`) | Retrieves an instance based on its ID |
+| `.destroy(<id>)` | `<class name>.destroy(<id>)` | Destroys an instance based on his ID |
+| `.update(<id>, <attr name>, <attr value>)` | `<class name>.update(<id>, <attr name>, <attr value>)` | Updates an instance based on his ID |
+| `.dupdate(<id>, <dict repr>)` | `<class name>.update(<id>, <dictionary representation>)` | Updates an instance based on his ID with a dictionary |
 
 ## Available Classes
 To get the power of the console. It is necessary to describe the classes that we have developed to create Hbnb website.
